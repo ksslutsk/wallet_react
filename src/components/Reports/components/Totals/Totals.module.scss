@@ -1,0 +1,112 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .totals {
+        height: 50px;
+        width: 1034px;
+
+        background-color: white;
+        box-shadow: $component-shadow;
+        border-radius: $component-border-radius;
+
+        padding: 7px 0;
+
+        @include flex(row, center, center);
+
+        &__text {
+            @include font(14px, 16px, 700);
+
+            &--expense {
+                @include font(14px, 16px, 700);
+                color: #E53935;
+            }
+
+            &--incomes {
+                @include font(14px, 16px, 700);
+                color: #407946;
+            }
+        }
+
+        &__separator {
+            height: 100%;
+            border: 0.5px solid #E0E5EB;
+            margin: 0 20px;
+        }
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .totals {
+        height: 50px;
+        width: 704px;
+
+        background-color: white;
+        box-shadow: $component-shadow;
+        border-radius: $component-border-radius;
+
+        padding: 7px 0;
+
+        @include flex(row, center, center);
+
+        &__text {
+            @include font(14px, 16px, 700);
+
+            &--expense {
+                @include font(14px, 16px, 700);
+                color: #E53935;
+            }
+
+            &--incomes {
+                @include font(14px, 16px, 700);
+                color: #407946;
+            }
+        }
+
+        &__separator {
+            height: 100%;
+            border: 0.5px solid #E0E5EB;
+            margin: 0 20px;
+        }
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .totals {
+        height: 85px;
+        width: 280px;
+
+        background-color: white;
+        box-shadow: 5px 10px 20px rgba(170, 178, 197, 0.4);
+        border-radius: 20px;
+
+        padding: 7px 0;
+
+        @include flex(row, center, center);
+
+        &__text {
+            @include font(14px, 16px, 700);
+            @include flex(column, center, center);
+
+            width: 50%;
+
+            &--expense {
+                @include font(14px, 16px, 700);
+                color: #E53935;
+                margin-top: 2.4px;
+            }
+
+            &--incomes {
+                @include font(14px, 16px, 700);
+                color: #407946;
+                margin-top: 2.4px;
+            }
+        }
+
+        &__separator {
+            height: 100%;
+            border: 0.5px solid #E0E5EB;
+            margin: 0 ;
+        }
+    }
+}

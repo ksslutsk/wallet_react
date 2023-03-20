@@ -1,0 +1,60 @@
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .App {
+        width: 100vw;
+        margin: 0;
+        color: $font-color-primary;
+    }
+
+    .background-div {
+        background-color: $secondary-color;
+        width: 100vw;
+        height: 68.5%;
+        position: absolute;
+        border-radius: 0 0 0 150px;
+        z-index: -100;
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .App {
+        width: 100vw;
+        margin: 0;
+        color: $font-color-primary;
+    }
+
+    .background-div {
+        background-color: $secondary-color;
+        width: 100vw;
+        height: 68.5%;
+        position: absolute;
+        border-radius: 0 0 0 150px;
+        z-index: -100;
+    }
+
+    .main {
+        width: 100vw;
+    }
+}
+
+@media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    .App {
+        width: 100vw;
+        margin: 0;
+        color: $font-color-primary;
+    }
+
+    .background-div {
+        background-color: $secondary-color;
+        width: 100vw;
+        height: 40%;
+        position: absolute;
+        border-radius: 0 0 0 150px;
+        z-index: -100;
+    }
+
+    .main {
+        width: 100%;
+    }
+}

@@ -1,0 +1,52 @@
+@import 'styles/variables';
+@import 'styles/mixins';
+
+.modal {
+    &__container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        background-color: rgba(82, 85, 95, 0.4);
+        width: 100%;
+        height: 100%;
+        @include flex(column);
+    }
+
+    &__window {
+        position: relative;
+        height: 194px;
+        width: 380px;
+        background-color: $font-color-white;
+        border-radius: $component-border-radius;
+        box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+        padding: 0 58px;
+        @include flex(column, center);
+        text-align: center;
+        margin: auto;
+    }
+
+    &__cross {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        content: url('src/assets/close.svg');
+    }
+
+    &__question {
+        @include font(14px, 16px, 500);
+    }
+
+    &__buttons {
+        @include flex(row, space-between);
+        margin: 10px 0;
+    }
+
+    &__button {
+        width: 125px;
+    }
+
+}

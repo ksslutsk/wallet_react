@@ -1,0 +1,109 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+
+    .accounting {
+        height: 619px;
+        width: 1098px;
+        margin: 0 auto;
+
+        &__switcher {
+            @include flex(row, flex-start);
+
+            &-item {
+                width: 138px;
+                height: 40px;
+                border-radius: 16px 16px 0 0;
+                background-color: #FAFBFD;
+                text-transform: uppercase;
+
+                &--active {
+                    background-color: #FEFEFE;
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &__desk {
+            background-color: white;
+            height: 579px;
+            width: 1098px;
+
+            box-shadow: $component-shadow;
+            border-radius: 0px $component-border-radius $component-border-radius $component-border-radius;
+
+            padding: 32px;
+        }
+
+        &__row {
+            @include flex(row, space-between);
+            margin-top: 60px;
+        }
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .accounting {
+        height: 656px;
+        width: 704px;
+        margin: 0 auto;
+
+        &__switcher {
+            @include flex(row, flex-start);
+
+            &-item {
+                width: 138px;
+                height: 40px;
+                border-radius: 16px 16px 0 0;
+                background-color: #FAFBFD;
+                text-transform: uppercase;
+
+                &--active {
+                    background-color: #FEFEFE;
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &__desk {
+            background-color: white;
+            height: 616px;
+            width: 704px;
+
+            box-shadow: $component-shadow;
+            border-radius: 0px $component-border-radius $component-border-radius $component-border-radius;
+
+            padding: 24px 40px;
+        }
+    }
+}
+
+@media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    .accounting {
+        @include flex(column-reverse, space-between);
+        flex-grow: 3;
+        height: 100%;
+        &__switcher {
+            @include flex(row, flex-start);
+
+            &-item {
+                height: 53px;
+                width: calc((100vw - 4px) / 2);
+                background-color: #FAFBFD;
+                text-transform: uppercase;
+
+                &--active {
+                    background-color: $primary-color;
+                    color: white;
+                }
+            }
+            position: sticky;
+            bottom: 0;
+        }
+
+        &__desk {
+            background-color: transparent;
+        }
+    }
+}

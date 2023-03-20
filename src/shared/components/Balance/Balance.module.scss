@@ -1,0 +1,170 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .balance {
+        &__container {
+            @include flex(row);
+            margin: 40px auto;
+        }
+
+        &-group {
+            @include flex(row, center, center);
+            vertical-align: middle;
+            flex-grow: 3;
+
+            &__items {
+                @include flex(row);
+            }
+
+            &__item {
+                width: 125px;
+                border-radius: $button-border-radius;
+                margin: 0 8px;
+
+                position: relative;
+
+            }
+        }
+
+        &__label {
+            color: rgba(82, 85, 95, 0.7);
+            margin-right: 20px;
+        }
+
+        &-input {
+            position: relative;
+            border-radius: $button-border-radius;
+            text-align: end;
+            padding-right: 52.5px;
+            border: 2px solid white;
+            appearance: none;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            @include font(12px, 14px, 700);
+
+            &__valuta {
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                @include font(12px, 14px, 700);
+            }
+        }
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .balance {
+        &__container {
+            @include flex(row);
+            width: 704px;
+            margin: 40px auto;
+        }
+
+        &-group {
+            @include flex(row, start, center);
+            vertical-align: middle;
+            flex-grow: 3;
+
+            &__items {
+                @include flex(row);
+            }
+
+            &__item {
+                width: 125px;
+                margin: 0 8px;
+                position: relative;
+            }
+        }
+
+        &__label {
+            color: rgba(82, 85, 95, 0.7);
+            margin-right: 20px;
+            margin-left: 35px;
+        }
+
+        &-input {
+            position: relative;
+            border-radius: $button-border-radius;
+            text-align: end;
+            padding-right: 52.5px;
+            border: 2px solid white;
+
+            @include font(12px, 14px, 700);
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &__valuta {
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                @include font(12px, 14px, 700);
+            }
+        }
+    }
+}
+
+@media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    .balance {
+        &__container {
+            @include flex(column-reverse);
+        }
+
+        &-group {
+            @include flex(column, start, center);
+            vertical-align: middle;
+
+            &__items {
+                @include flex(row);
+            }
+
+            &__item {
+                width: 125px;
+                margin: 0;
+                position: relative;
+            }
+
+            &__button {
+                border-radius: 0 22px 22px 0;
+                //border: 2px solid white;
+            }
+        }
+
+        &__label {
+            color: rgba(82, 85, 95, 0.7);
+            margin-bottom: 8px;
+        }
+
+        &-input {
+            position: relative;
+            border-radius: 22px 0 0 22px;
+
+            border: 2px solid white;
+            text-align: end;
+            padding-right: 52.5px;
+            @include font(12px, 14px, 700);
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            &__valuta {
+                position: absolute;
+                right: 20px;
+                top: 15px;
+                @include font(12px, 14px, 700);
+            }
+        }
+    }
+}

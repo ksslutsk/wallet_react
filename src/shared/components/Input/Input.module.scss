@@ -1,0 +1,47 @@
+@import 'styles/variables';
+@import 'styles/mixins.scss';
+
+.input {
+    padding: 12px 19.5px;
+    width: 100%;
+
+    &__variant {
+        &--primary {
+            background-color: $secondary-color;
+            border: none;
+            height: $input-primary-height;
+        }
+
+        &--secondary {
+            background-color: transparent;
+            border: 2px solid $font-color-placeholder;
+            height: $input-secondary-height;
+        }
+    }
+
+    &-wrapper {
+        @include flex(column);
+
+        &__input-label {
+            margin-bottom: 12px;
+            color: black;
+            @include font(10px, 12px);
+        }
+
+        &__error-message {
+            margin-top: 4px;
+            color: $font-color-danger;
+            font-size: 10px;
+            line-height: 12px;
+        }
+
+        .label-empty-space {
+            color: transparent;
+        }
+
+        .input--required {
+            color: $font-color-danger;
+        }
+    }
+
+}

@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+@media (min-width: $width-tablet) {
+    .input {
+        border-radius: $component-border-radius;
+
+        &-group {
+            margin: 8px 0;
+            height: 123px;
+        }
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .input {
+        border-radius: $component-border-radius;
+
+        &-group {
+            margin: 0;
+            margin-bottom: 4px;
+            height: 92px;
+        }
+    }
+}

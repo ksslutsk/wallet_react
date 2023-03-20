@@ -1,0 +1,60 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.select {
+    position: relative;
+
+    &-container {
+        @include flex(column);
+        border: none;
+    }
+
+    &-input {
+        background-color: transparent;
+        position: relative;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    &-icon {
+        content: url('src/assets/select_icon.svg');
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        cursor: pointer;
+        height: 4px;
+        width: 10.21px;
+
+        &--active {
+            transform: rotate(180deg);
+        }
+    }
+
+    &-list {
+        min-width: 182px;
+        border: 2px solid $secondary-color;
+        box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
+        position: absolute;
+        top: 100%;
+        z-index: 100;
+        visibility: hidden;
+
+        &--open {
+            visibility: visible;
+        }
+
+        &__item {
+            height: 32px;
+            color: $font-color-placeholder;
+            padding: 0 20px;
+            background-color: white;
+            
+            @include flex(column, space-around);
+
+            &:hover {
+                background-color: $secondary-color;
+                color: $font-color-primary;
+            }
+        }
+    }
+}

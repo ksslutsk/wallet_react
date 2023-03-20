@@ -1,0 +1,33 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .reports {
+        @include flex(column, center, center);
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .reports {
+        @include flex(column, center, center);
+
+        &__header {
+            margin: 42px 0 32px 0;
+        }
+    }
+}
+
+@media (min-width: $width-mobile) and (max-width: $width-tablet) {
+    .reports {
+        @include flex(column);
+
+        &__header {
+            margin: 22px 20px 32px 20px;
+        }
+
+        &__period-totals {
+            align-self: center;
+            margin-bottom: 32px;
+        }
+    }
+}

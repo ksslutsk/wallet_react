@@ -1,0 +1,245 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+
+    .acc-header {
+        @include flex(row);
+
+        &__fields {
+            @include flex(row);
+
+            position: relative;
+        }
+
+        &__date {
+            @include font(12px, 14px, 900);
+
+            &-icon {
+                content: url('src/assets/calendar.svg');
+                margin-right: 10px;
+                height: 20px;
+            }
+
+            &-container {
+                @include flex(row);
+
+                align-items: center;
+            }
+        }
+
+        &__buttons {
+            @include flex(row, space-between);
+
+            width: 288px;
+        }
+
+        &__button {
+            width: 136px;
+        }
+
+        &__product-info {
+            width: 578px;
+            height: 44px;
+            @include flex(row);
+
+            margin: 0 32px;
+        }
+
+        &__expense {
+            &-description {
+                width: 290px;
+                height: 100%;
+                border: 2px solid #F6F7FC;
+                border-radius: 16px 0px 0px 0px;
+            }
+
+            &-category {
+                width: 169px;
+                border: none;
+                border-top: 2px solid #F6F7FC;
+                border-bottom: 2px solid #F6F7FC;
+                height: 100%;
+            }
+
+            &-price {
+                height: 100%;
+                width: 121px;
+                margin: 0;
+                padding: 0;
+                border: none;
+                position: relative;
+            }
+        }
+    }
+
+    .expense-price__input {
+        height: 44px;
+        width: 121px;
+
+        border: 2px solid #F6F7FC;
+        border-radius: 0px 16px 16px 0px;
+
+        position: relative;
+        text-align: end;
+        padding-right: 36px;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &-icon {
+            content: url('./src/assets/calculator.svg');
+            position: absolute;
+            right: 11px;
+            top: 13px;
+        }
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+
+    .acc-header {
+        @include flex(column, unset, center);
+
+        &__fields {
+            @include flex(row, space-between);
+
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        &__date {
+            @include font(12px, 14px, 900);
+
+            &-icon {
+                content: url('src/assets/calendar.svg');
+                margin-right: 10px;
+                height: 20px;
+            }
+
+            &-container {
+                @include flex(row);
+
+                align-items: center;
+            }
+        }
+
+        &__buttons {
+            @include flex(row, space-between);
+
+            width: 288px;
+        }
+
+        &__button {
+            width: 136px;
+        }
+
+        &__product-info {
+            width: 480px;
+            height: 44px;
+            @include flex(row);
+
+            margin: 0;
+            margin-left: 40px;
+        }
+
+        &__expense {
+            &-description {
+                width: 184px;
+                height: 100%;
+                border: 2px solid #F6F7FC;
+                border-radius: 16px 0px 0px 0px;
+            }
+
+            &-category {
+                width: 186px;
+                border: none;
+                border-top: 2px solid #F6F7FC;
+                border-bottom: 2px solid #F6F7FC;
+                height: 100%;
+            }
+
+            &-price {
+                height: 100%;
+                width: 110px;
+                margin: 0;
+                padding: 0;
+                border: none;
+                position: relative;
+            }
+        }
+    }
+
+    .expense-price__input {
+        height: 44px;
+        width: 100%;
+
+        border: 2px solid #F6F7FC;
+        border-radius: 0px 16px 16px 0px;
+
+        position: relative;
+        text-align: end;
+        padding-right: 45px;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &-icon {
+            content: url('./src/assets/calculator.svg');
+            position: absolute;
+            right: 21.66px;
+            top: 13px;
+        }
+    }
+}
+
+@media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    .acc-header {
+        @include flex(row);
+        margin: 40px 0;
+
+        &__fields {
+            @include flex(row);
+
+            position: relative;
+        }
+
+        &__date {
+            @include font(12px, 14px, 900);
+
+            &-container {
+                @include flex(row);
+
+                align-items: center;
+            }
+
+            &-icon {
+                content: url('src/assets/calendar.svg');
+                margin-right: 10px;
+                height: 20px;
+            }
+        }
+
+        &__buttons {
+            display: none;
+        }
+
+        &__product-info {
+            display: none;
+        }
+
+        &__expense {
+            display: none;
+        }
+    }
+
+    .expense-price__input {
+        display: none;
+    }
+}

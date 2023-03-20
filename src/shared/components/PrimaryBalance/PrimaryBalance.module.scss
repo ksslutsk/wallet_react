@@ -1,0 +1,51 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .balance {
+        border-radius: $button-border-radius;
+        width: 130px;
+        text-align: right;
+        border-color: white;
+        padding-right: 20px;
+
+        @include font(12px, 14px, 700);
+
+        color: black;
+
+        &-label {
+            @include font(12px, 14px, 500);
+
+            margin-right: 20px;
+            color: rgba(82, 85, 95, 0.7);
+        }
+
+        &-group {
+            @include flex(row, center, center);
+        }
+    }
+}
+
+@media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    .balance {
+        border-radius: 22px;
+        width: 183px;
+        text-align: center;
+        border-color: white;
+
+        @include font(12px, 14px, 700);
+
+        color: black;
+
+        &-label {
+            @include font(12px, 14px, 500);
+
+            margin-bottom: 11px;
+            color: rgba(82, 85, 95, 0.7);
+        }
+
+        &-group {
+            @include flex(column, center, center);
+        }
+    }
+}

@@ -1,0 +1,79 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+@media (min-width: $width-tablet) {
+    .google {
+        &-group {
+            @include flex(column);
+            margin-bottom: 20px;
+
+            &__top-text {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+        }
+
+        &-button {
+            &__container {
+                margin: 32px auto 32px auto;
+                height: 40px;
+                filter: drop-shadow(1px 2px 3px rgba(170, 178, 197, 0.2));
+            }
+
+            &__content {
+                width: 119px;
+                font-size: 14px;
+            }
+        }
+
+        &-symbol {
+            content: url('/src/assets/googleSymbol.svg');
+            vertical-align: middle;
+            margin-right: 9.5px;
+        }
+
+        &-label {
+            @include font(14px, 16px, 500)
+        }
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .google {
+        &-group {
+            @include flex(column, center, center);
+            margin-bottom: 16px;
+
+            &__top-text {
+                width: 90%;
+                text-align: center;
+                margin: 0;
+            }
+        }
+
+        &-button {
+            &__container {
+                margin: 16px auto 32px auto;
+                height: 40px;
+            }
+
+            &__content {
+                width: 116px;
+                font-size: 14px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+
+        &-symbol {
+            content: url('/src/assets/googleSymbol.svg');
+            vertical-align: middle;
+            margin-right: 9.5px;
+        }
+
+        &-label {
+            @include font(14px, 16px, 500)
+        }
+    }
+}

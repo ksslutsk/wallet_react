@@ -1,0 +1,26 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+@media (min-width: $width-tablet) {
+    .bottom-buttons-container {
+        @include flex(row, space-around);
+
+        margin-top: 12px;
+
+        .bottom-button {
+            width: 122px;
+        }
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .bottom-buttons-container {
+        @include flex(row, space-around);
+
+        margin-top: 20px;
+
+        .bottom-button {
+            width: 116px;
+        }
+    }
+}

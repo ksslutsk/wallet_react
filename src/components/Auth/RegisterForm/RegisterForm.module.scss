@@ -1,0 +1,30 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+@media (min-width: $width-tablet) {
+    .sign-in-form {
+        @include flex(column);
+
+        width: $sign-in-form-width-desktop;
+        height: 675px;
+        background-color: #fff;
+        margin: 0 auto;
+        box-shadow: $component-shadow;
+        border-radius: 30px;
+        padding: 56px 83px;
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .sign-in-form {
+        @include flex(column);
+
+        width: $sign-in-form-width-mobile;
+        height: 584px;
+        background-color: #fff;
+        margin: 0;
+        box-shadow: $component-shadow;
+        border-radius: 30px;
+        padding: 40px 20px;
+    }
+}

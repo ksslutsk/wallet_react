@@ -1,0 +1,323 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .container {
+        height: 348px;
+        width: 1034px;
+        background-color: white;
+        box-shadow: $component-shadow;
+
+        border-radius: $component-border-radius;
+        margin: 32px;
+        padding: 20px;
+
+        @include flex(column, unset, center);
+    }
+
+    .switcher {
+        @include flex(row, space-between, center);
+        width: 136px;
+        height: 20px;
+
+        &__left-arrow {
+            content: url('src/assets/switcher_arrow.svg');
+            height: 10px;
+            width: 4px;
+
+            cursor: pointer;
+        }
+
+        &__right-arrow {
+            content: url('src/assets/switcher_arrow.svg');
+            height: 10px;
+            width: 4px;
+            transform: rotate(180deg);
+
+            cursor: pointer;
+        }
+
+        &__description {
+            @include font(14px, 16px, 700);
+            text-transform: capitalize;
+        }
+    }
+
+    .categories {
+        @include flex(row, center, baseline);
+
+        flex-wrap: wrap;
+        margin: 0 100px;
+
+        &-item {
+            @include flex(column, unset, center);
+
+            cursor: pointer;
+            margin: 20px 15px;
+            max-width: 100px;
+            width: min-content;
+
+            &__amount {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+
+            &__name {
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            &__icon {
+                height: 56px;
+                z-index: 3;
+
+                &-container {
+                    height: 56px;
+                    margin: 0;
+                    position: relative;
+                    margin: 8px 0 5.24px 0;
+                    @include flex(row, center);
+
+                    width: min-content;
+                }
+
+                &-background {
+                    border-radius: 20px;
+                    height: 46.41px;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 0;
+                    background-color: $secondary-color;
+
+                    &--active {
+                        background-color: #FFDAC0;
+                    }
+                }
+
+                &--active {
+                    filter: invert(63%) sepia(56%) saturate(4499%) hue-rotate(345deg) brightness(100%) contrast(103%);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .container {
+        height: 348px;
+        width: 704px;
+        background-color: white;
+        box-shadow: $component-shadow;
+
+        border-radius: $component-border-radius;
+        margin: 32px;
+        padding: 20px;
+
+        @include flex(column, unset, center);
+    }
+
+    .switcher {
+        @include flex(row, space-between, center);
+        width: 136px;
+        height: 20px;
+
+        &__left-arrow {
+            content: url('src/assets/switcher_arrow.svg');
+            height: 10px;
+            width: 4px;
+
+            cursor: pointer;
+        }
+
+        &__right-arrow {
+            content: url('src/assets/switcher_arrow.svg');
+            height: 10px;
+            width: 4px;
+            transform: rotate(180deg);
+
+            cursor: pointer;
+        }
+
+        &__description {
+            @include font(14px, 16px, 700);
+            text-transform: capitalize;
+        }
+    }
+
+    .categories {
+        @include flex(row, center, baseline);
+
+        flex-wrap: wrap;
+        margin: 0 20px;
+
+        &-item {
+            @include flex(column, unset, center);
+
+            margin: 20px 10px;
+            max-width: 100px;
+            width: min-content;
+            cursor: pointer;
+
+            &__amount {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+
+            &__name {
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            &__icon {
+                height: 56px;
+                z-index: 3;
+
+                &-container {
+                    height: 56px;
+                    margin: 0;
+                    position: relative;
+                    margin: 8px 0 5.24px 0;
+                    @include flex(row, center);
+
+                    width: min-content;
+                }
+
+                &-background {
+                    border-radius: 20px;
+                    height: 46.41px;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 0;
+                    background-color: $secondary-color;
+
+                    &--active {
+                        background-color: #FFDAC0;
+                    }
+                }
+
+                &--active {
+                    filter: invert(63%) sepia(56%) saturate(4499%) hue-rotate(345deg) brightness(100%) contrast(103%);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $width-mobile) and (max-width: $width-tablet) {
+    .container {
+        width: 100%;
+        background-color: transparent;
+
+        padding: 20px;
+
+        @include flex(column, unset, center);
+    }
+
+    .switcher {
+        @include flex(row, space-between, center);
+        width: 136px;
+        height: 20px;
+
+        &__left-arrow {
+            content: url('src/assets/switcher_arrow.svg');
+            height: 10px;
+            width: 4px;
+
+            cursor: pointer;
+        }
+
+        &__right-arrow {
+            content: url('src/assets/switcher_arrow.svg');
+            height: 10px;
+            width: 4px;
+            transform: rotate(180deg);
+
+            cursor: pointer;
+        }
+
+        &__description {
+            @include font(14px, 16px, 700);
+            text-transform: capitalize;
+        }
+    }
+
+    .categories {
+        @include flex(row, space-around, baseline);
+
+        width: 100%;
+        flex-wrap: wrap;
+        margin: 0;
+
+        &-item {
+            @include flex(column, unset, center);
+
+            cursor: pointer;
+
+            margin: 20px 0;
+            max-width: 106px;
+            min-width: 84px;
+            width: min-content;
+
+            &__wrapper {
+                @include flex(row, center);
+                flex-grow: 2;
+                border-bottom: 1px solid #E0E5EB;
+                height: 151px;
+            }
+
+            &__amount {
+                width: 100%;
+                text-align: center;
+                margin: 0;
+            }
+
+            &__name {
+                width: 100%;
+                text-align: center;
+                text-transform: uppercase;
+                margin: 0;
+            }
+
+            &__icon {
+                height: 56px;
+                z-index: 3;
+
+                &-container {
+                    height: 56px;
+                    margin: 0;
+                    position: relative;
+                    margin: 8px 0 5.24px 0;
+                    @include flex(row, center);
+
+                    width: min-content;
+                }
+
+                &-background {
+                    border-radius: 20px;
+                    height: 46.41px;
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    z-index: 0;
+                    background-color: $secondary-color;
+
+                    &--active {
+                        background-color: #FFDAC0;
+                    }
+                }
+
+                &--active {
+                    filter: invert(63%) sepia(56%) saturate(4499%) hue-rotate(345deg) brightness(100%) contrast(103%);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,64 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .summary {
+        background-color: $secondary-color;
+        width: 213px;
+        height: 280px;
+        border-radius: $button-border-radius $button-border-radius $button-border-radius 0;
+
+        &__header {
+            @include font(12px, 14px, 700);
+            @include flex(row, center, center);
+
+            height: 40px;
+            border-bottom: 2px solid white;
+        }
+
+        &__row {
+            @include flex(row, space-between, center);
+
+            height: 40px;
+            border-top: 2px solid white;
+            padding: 0 12px;
+        }
+    }
+
+    .bottom-indent {
+        display: none;
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .summary {
+        background-color: $secondary-color;
+        width: 230px;
+        height: 280px;
+        border-radius: $button-border-radius $button-border-radius $button-border-radius 0;
+
+        margin-top: 40px;
+
+        &__header {
+            @include font(12px, 14px, 700);
+            @include flex(row, center, center);
+
+            height: 40px;
+            border-bottom: 3px solid white;
+        }
+
+        &__row {
+            @include flex(row, space-between, center);
+
+            height: 40px;
+            border-top: 2px solid white;
+            padding: 0 20px;
+        }
+    }
+
+    .bottom-indent {
+        height: 60px;
+        background-color: transparent;
+        border: none;
+    }
+}

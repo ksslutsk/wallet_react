@@ -1,0 +1,182 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.switcher {
+    @include flex(row, space-between, center);
+
+    width: 128px;
+    margin-top: 5px;
+
+    &__left-arrow {
+        content: url('src/assets/switcher_arrow.svg');
+        height: 10px;
+        width: 4px;
+
+        cursor: pointer;
+    }
+
+    &__right-arrow {
+        content: url('src/assets/switcher_arrow.svg');
+        height: 10px;
+        width: 4px;
+        transform: rotate(180deg);
+
+        cursor: pointer;
+    }
+
+    &__date {
+        @include font(14px, 16px, 700);
+
+        margin: auto 8px;
+        color: black;
+        white-space: nowrap;
+    }
+}
+
+@media (min-width: $width-desktop) {
+    .header {
+        @include flex(row, space-between, center);
+
+        width: 1034px;
+
+        &__go-back {
+            @include flex(row, unset, center);
+            cursor: pointer;
+
+            &-icon {
+                content: url('src/assets/arrow.svg');
+                height: 12px;
+                width: 18px;
+                margin-right: 19px;
+            }
+
+            &-text {
+                color: $font-color-disabled;
+                white-space: nowrap;
+            }
+        }
+
+        &__curr-period {
+            @include flex(column, unset, center);
+            color: $font-color-disabled;
+        }
+
+        &-balance {
+            overflow: hidden;
+            flex-grow: 3;
+            @include flex(row, center);
+        }
+
+        &-wrapper {
+            @include flex(row, unset, center);
+            flex-grow: 3;
+        }
+
+        // .switcher {
+        //     @include flex(row, space-between, center);
+        
+        //     width: 128px;
+        //     margin-top: 5px;
+        
+        //     &__left-arrow {
+        //         content: url('src/assets/switcher_arrow.svg');
+        //         height: 10px;
+        //         width: 4px;
+        
+        //         cursor: pointer;
+        //     }
+        
+        //     &__right-arrow {
+        //         content: url('src/assets/switcher_arrow.svg');
+        //         height: 10px;
+        //         width: 4px;
+        //         transform: rotate(180deg);
+        
+        //         cursor: pointer;
+        //     }
+        
+        //     &__date {
+        //         @include flex(row);
+        //     }
+        // }
+    }
+}
+
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .header {
+        @include flex(row, space-between, center);
+
+        width: 704px;
+
+        &__go-back {
+            @include flex(row, unset, center);
+            cursor: pointer;
+
+            &-icon {
+                content: url('src/assets/arrow.svg');
+                height: 12px;
+                width: 18px;
+                margin-right: 19px;
+            }
+
+            &-text {
+                color: $font-color-disabled;
+                white-space: nowrap;
+            }
+        }
+
+        &-wrapper {
+            @include flex(row, unset, center);
+            flex-grow: 3;
+        }
+
+        &__curr-period {
+            @include flex(column, unset, center);
+            color: $font-color-disabled;
+        }
+
+        &-balance {
+            flex-grow: 3;
+        }
+    }
+}
+
+@media (min-width: $width-mobile) and (max-width: $width-tablet) {
+
+    .header {
+        @include flex(column);
+
+        &__go-back {
+            @include flex(row, unset, center);
+            cursor: pointer;
+
+            margin-bottom: 22px;
+
+            &-icon {
+                content: url('src/assets/arrow.svg');
+                height: 12px;
+                width: 18px;
+                margin-right: 19px;
+            }
+
+            &-text {
+                display: none;
+            }
+        }
+
+        &__curr-period {
+            @include flex(column, center, center);
+            color: $font-color-disabled;
+        }
+
+        &-balance {
+            margin-top: 32px;
+            align-self: center;
+        }
+
+        &-wrapper {
+            @include flex(column-reverse);
+        }
+    }
+}

@@ -1,0 +1,170 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@media (min-width: $width-desktop) {
+    .chart {
+        &__container {
+            @include flex(row, center, end);
+
+            width: 1034px;
+            height: 422px;
+
+            background-color: white;
+            border-radius: $component-border-radius;
+            box-shadow: $component-shadow;
+
+            padding: 20px 138px;
+            position: relative;
+
+            margin-bottom: 80px;
+        }
+
+        &__background {
+            @include flex(column);
+
+            position: absolute;
+            z-index: 0;
+            padding-bottom: 22px;
+            width: 758px;
+            border-top: 2px solid #F5F6FB;
+
+            &-line {
+                width: 100%;
+                height: 40px;
+                border-bottom: 2px solid #F5F6FB;
+            }
+        }
+    }
+
+    .bar {
+        width: 38px;
+        border-radius: 10px 10px 0 0;
+
+        &__amount {
+            @include font(12px, 14px, 400);
+
+            color: $font-color-primary;
+            margin-bottom: 13px;
+            white-space: nowrap;
+        }
+
+        &__container {
+            @include flex(column, center, center);
+
+            z-index: 2;
+            width: 38px;
+            margin: 0 12.5px;
+        }
+
+        &__description {
+            margin-top: 8px;
+            white-space: nowrap;
+        }
+    }
+
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .chart {
+        &__container {
+            @include flex(row, center, end);
+
+            width: 704px;
+            height: 422px;
+
+            background-color: white;
+            border-radius: $component-border-radius;
+            box-shadow: $component-shadow;
+
+            padding: 20px 138px;
+            position: relative;
+
+            margin-bottom: 80px;
+        }
+
+        &__background {
+            @include flex(column);
+
+            position: absolute;
+            z-index: 0;
+            padding-bottom: 22px;
+            width: 635px;
+            border-top: 2px solid #F5F6FB;
+
+            &-line {
+                width: 100%;
+                height: 40px;
+                border-bottom: 2px solid #F5F6FB;
+            }
+        }
+    }
+
+    .bar {
+        width: 38px;
+        border-radius: 10px 10px 0 0;
+
+        &__amount {
+            @include font(12px, 14px, 400);
+
+            color: $font-color-primary;
+            margin-bottom: 13px;
+            white-space: nowrap;
+        }
+
+        &__container {
+            @include flex(column, center, center);
+
+            z-index: 2;
+            width: 38px;
+            margin: 0 12.5px;
+        }
+
+        &__description {
+            margin-top: 8px;
+            white-space: nowrap;
+        }
+    }
+}
+
+@media (min-width: $width-mobile) and (max-width: $width-tablet) {
+    .chart {
+        &__container {
+            @include flex(column, start);
+
+            width: 100%;
+            padding: 0 20px;
+            margin-bottom: 44px;
+        }
+
+        &__background {
+            display: none;
+        }
+    }
+
+}
+
+.horizontal-bar {
+
+    height: 15px;
+    margin-right: 10px;
+    border-radius: 0 10px 10px 0;
+
+    &__container {
+        width: min-content;
+        margin: 8px 0;
+    }
+
+    &__head {
+        @include flex(row, space-between, center);
+        height: 20px;
+    }
+
+    &__description {
+        white-space: nowrap;
+        margin-right: 5px;
+    }
+
+    &__amount {
+        white-space: nowrap;
+    }
+}

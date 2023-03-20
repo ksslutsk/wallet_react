@@ -1,0 +1,159 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+@media (min-width: $width-desktop) {
+
+    .sign-in-container {
+        @include flex();
+        height: calc(100vh - $header-height);
+        padding: 173px 91px 125px 91px;
+    }
+
+    .lot-of-kapusta {
+        position: absolute;
+        width: 100vw;
+        height: max-content;
+        z-index: -5;
+        top: 84.5px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            content: url('/src/assets/lotOfKapusta.svg');
+        }
+    }
+
+    .two-kapustas {
+        position: absolute;
+        z-index: -5;
+        bottom: 50px;
+        left: 20.5%;
+        content: url('/src/assets/twoKapustas.svg');
+    }
+
+    .main-image__wrapper {
+        @include flex(column, space-around);
+        width: 60%;
+        align-items: center;
+    }
+
+    .main-image {
+        margin-left: 0;
+        width: min-content;
+        content: url('/src/assets/smartFinanceDesctop.svg');
+    }
+
+    .sign-in-form__wrapper {
+        @include flex(column, space-around);
+        width: 40%;
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+
+    .sign-in-container {
+        @include flex(column);
+
+        height: calc(100vh - $header-height);
+        align-items: center;
+        margin: 0;
+    }
+
+    .lot-of-kapusta {
+        position: absolute;
+        z-index: -5;
+        top: 84.5px;
+        width: 100vw;
+        overflow: hidden;
+
+        img {
+            content: url('/src/assets/lotOfKapusta.svg');
+        }
+    }
+
+    .two-kapustas {
+        position: absolute;
+        z-index: -5;
+        bottom: 50px;
+        content: url('/src/assets/twoKapustas.svg');
+        left: 13%;
+    }
+
+    .main-image__wrapper {
+        width: $sign-in-form-width-desktop;
+        align-items: start;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .main-image {
+        margin-left: 0;
+        min-height: 101px;
+        height: 101px;
+        margin: 80px 0;
+        content: url('/src/assets/smartFinanceTablet.svg');
+    }
+
+    .sign-in-form__wrapper {
+        width: auto;
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .sign-in-container {
+        @include flex(column, start);
+
+        height: calc(100vh - $header-height);
+        align-items: center;
+
+    }
+
+    .main-image__wrapper {
+        @include flex(column, space-around);
+        align-items: start;
+        width: $sign-in-form-width-mobile;
+        margin: 0;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .main-image {
+        margin-left: 0;
+        height: 63px;
+        margin: 86px 0 50px 0;
+        content: url('/src/assets/smartFinanceMobile.svg');
+    }
+
+    .sign-in-form__wrapper {
+        @include flex(column, space-around);
+        width: auto;
+        align-items: start;
+    }
+
+    .lot-of-kapusta {
+        position: absolute;
+        z-index: -5;
+        top: 156px;
+        width: 100vw;
+        overflow: hidden;
+
+        img {
+            position: relative;
+            content: url('/src/assets/singleKapusta.svg');
+            transform: rotate(-180deg);
+            left: calc(100vw - 43px);
+        }
+    }
+
+    .two-kapustas {
+        position: absolute;
+        z-index: -5;
+        bottom: 0;
+        left: 13%;
+        content: url('/src/assets/singleKapusta.svg');
+    }
+}

@@ -1,0 +1,84 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.main {
+    @include flex(column, center, center);
+    height: calc(100vh - 56px);
+    
+    &__accounting {
+        flex-grow: 3;
+    }
+}
+
+@media (min-width: $width-desktop) {
+    .balance {
+        &-group {
+            @include flex(row, unset, center);
+            width: 1098px;
+        }
+
+        &__header {
+            @include flex(row);
+
+            align-self: center;
+            color: rgba(82, 85, 95, 0.7);
+
+            @include font(12px, 14px, 400);
+            cursor: pointer;
+        }
+
+        &__icon {
+            content: url('src/assets/reports_icon.svg');
+            margin-left: 20px;
+        }
+    }
+}
+
+@media (min-width: $width-tablet) and (max-width: $width-desktop) {
+    .balance {
+        &-group {
+            @include flex(row, start, center);
+            vertical-align: middle;
+            flex-grow: 3;
+            width: 704px;
+        }
+
+        &__header {
+            @include flex(row);
+
+            align-self: center;
+            color: rgba(82, 85, 95, 0.7);
+
+            @include font(12px, 14px, 400);
+            cursor: pointer;
+        }
+
+        &__icon {
+            content: url('src/assets/reports_icon.svg');
+            margin-left: 20px;
+        }
+    }
+}
+
+@media (max-width: $width-tablet) and (min-width: $width-mobile) {
+    .balance {
+        &-group {
+            @include flex(column-reverse);
+            vertical-align: middle;
+        }
+
+        &__header {
+            align-self: center;
+            color: rgba(82, 85, 95, 0.7);
+
+            @include font(12px, 14px, 400);
+            margin-top: 47px;
+            margin-bottom: 35px;
+        }
+
+        &__icon {
+            content: url('src/assets/reports_icon.svg');
+            margin-left: 20px;
+        }
+    }
+}

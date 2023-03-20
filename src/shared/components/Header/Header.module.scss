@@ -1,0 +1,58 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.header {
+
+    &__container {
+        @include flex(row, space-between, start);
+        margin: 0;
+        height: $header-height;
+        width: 100%;
+        padding: 12px 16px;
+        background-color: $font-color-white;
+    }
+
+    &__buttons {
+        @include flex();
+        align-items: center;
+    }
+
+    &__avatar {
+        margin-right: 16px;
+    }
+
+    &__separator {
+        margin: 0 20px;
+        border: 0.5px solid #E0E5EB;
+        height: 36px;
+    }
+
+    &__exit {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+}
+
+@media (min-width: $width-tablet) {
+    .header__text {
+        margin: 0;
+
+        @include flex(row, unset, center);
+    }
+
+    .header__exit-icon {
+        content: url('src/assets/logout.svg');
+        display: none;
+    }
+}
+
+@media (max-width: $width-tablet) {
+    .header__text {
+        display: none;
+    }
+
+    .header__exit-icon {
+        content: url('src/assets/logout.svg');
+    }
+}

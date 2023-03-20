@@ -1,0 +1,51 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.button {
+    padding: 12px 0;
+    height: 44px;
+    width: 100%;
+
+    @include font(12px, 14px, 700);
+    letter-spacing: 0.02em;
+
+    &:hover {
+        filter: $filter-shadow;
+        cursor: pointer;
+    }
+
+    &__color {
+        &--primary {
+            border: 1px solid $primary-color;
+            background-color: $primary-color;
+            color: $font-color-white;
+        }
+
+        &--secondary {
+            border: 0 solid $secondary-color;
+            background-color: $secondary-color;
+            color: $font-color-primary;
+        }
+
+        &--transparent {
+            border: 2px solid #F6F7FC;
+            background-color: transparent;
+            color: $font-color-primary;
+        }
+
+        &--white-border {
+            border: 2px solid white;
+            background-color: transparent;
+            color: $font-color-primary;
+        }
+    }
+
+    &--rounded {
+        border-radius: $button-border-radius;
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: default;
+    }
+}
